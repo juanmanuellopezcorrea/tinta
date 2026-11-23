@@ -204,29 +204,39 @@ def page_equipo(doc):
     )
 
     # Juan card
-    page.draw_rect(fitz.Rect(42, 165, A4.width / 2 - 10, 430), color=MIST, fill=MIST, width=0)
-    line(page, "FUNDADOR", 58, 195, "sb", 9, MALBEC)
-    line(page, "JUAN MANUEL", 58, 230, "xb", 22, BLACK)
-    line(page, "LÓPEZ CORREA", 58, 256, "xb", 22, BLACK)
+    juan_box = fitz.Rect(42, 155, A4.width / 2 - 10, 455)
+    page.draw_rect(juan_box, color=MIST, fill=MIST, width=0)
+    photo = fitz.Rect(58, 170, 148, 290)
+    contain_image(page, ASSETS / "juan-manuel-lopez.jpg", photo, bg=(0.9, 0.88, 0.85))
+    line(page, "FUNDADOR", 162, 188, "sb", 8, MALBEC)
+    line(page, "JUAN MANUEL", 162, 215, "xb", 16, BLACK)
+    line(page, "LÓPEZ CORREA", 162, 235, "xb", 16, BLACK)
     txt(
         page,
-        fitz.Rect(58, 280, A4.width / 2 - 24, 420),
+        fitz.Rect(58, 305, A4.width / 2 - 24, 400),
         "Ingeniero Agrónomo\n"
         "Ph.D. in Artificial Intelligence\n\n"
         "Software a medida, datos y automatización.\n"
         "Une criterio de campo y planta con sistemas\n"
-        "inteligentes: modela el problema, diseña la\n"
-        "solución y la pone a producir.",
-        "lat", 11, INK,
+        "inteligentes.",
+        "lat", 10, INK,
+    )
+    txt(
+        page,
+        fitz.Rect(58, 405, A4.width / 2 - 24, 448),
+        "linkedin.com/in/juanmanuelopezcorrea\n"
+        "orcid.org/0000-0002-3001-744X\n"
+        "scholar.google.es · 5U0qYAMAAAAJ",
+        "lat", 8, MUTED,
     )
 
     # Pabla card
-    page.draw_rect(fitz.Rect(A4.width / 2 + 10, 165, A4.width - 42, 430), color=MIST, fill=MIST, width=0)
-    line(page, "INGENIERÍA DE PROCESOS", A4.width / 2 + 26, 195, "sb", 9, MALBEC)
-    line(page, "PABLA TORRES", A4.width / 2 + 26, 230, "xb", 22, BLACK)
+    page.draw_rect(fitz.Rect(A4.width / 2 + 10, 155, A4.width - 42, 455), color=MIST, fill=MIST, width=0)
+    line(page, "INGENIERÍA DE PROCESOS", A4.width / 2 + 26, 188, "sb", 8, MALBEC)
+    line(page, "PABLA TORRES", A4.width / 2 + 26, 220, "xb", 18, BLACK)
     txt(
         page,
-        fitz.Rect(A4.width / 2 + 26, 280, A4.width - 56, 420),
+        fitz.Rect(A4.width / 2 + 26, 250, A4.width - 56, 440),
         "Ingeniera Industrial\n"
         "Ingeniería de procesos\n\n"
         "Mapa operativo, mejora continua y SLAs.\n"
@@ -237,7 +247,7 @@ def page_equipo(doc):
     )
 
     # Bottom how we work
-    line(page, "CÓMO TRABAJAMOS", 42, 475, "xb", 16, BLACK)
+    line(page, "CÓMO TRABAJAMOS", 42, 485, "xb", 16, BLACK)
     steps = [
         ("01  DIAGNÓSTICO", "45–90 min. Un proceso que duele. Mapa y prioridad."),
         ("02  DISEÑO", "Ingeniería + alcance de software/bot."),
@@ -247,10 +257,10 @@ def page_equipo(doc):
     w = (A4.width - 84 - 20) / 3
     for i, (t, b) in enumerate(steps):
         rx = x + i * (w + 10)
-        page.draw_rect(fitz.Rect(rx, 495, rx + w, A4.height - 48), color=WHITE, fill=WHITE, width=0)
-        page.draw_rect(fitz.Rect(rx, 495, rx + w, A4.height - 48), color=MIST, fill=None, width=0.6)
-        line(page, t, rx + 12, 520, "xb", 11, BLACK)
-        txt(page, fitz.Rect(rx + 12, 530, rx + w - 12, A4.height - 58), b, "lat", 10, MUTED)
+        page.draw_rect(fitz.Rect(rx, 505, rx + w, A4.height - 42), color=WHITE, fill=WHITE, width=0)
+        page.draw_rect(fitz.Rect(rx, 505, rx + w, A4.height - 42), color=MIST, fill=None, width=0.6)
+        line(page, t, rx + 12, 528, "xb", 11, BLACK)
+        txt(page, fitz.Rect(rx + 12, 538, rx + w - 12, A4.height - 50), b, "lat", 10, MUTED)
 
 
 def page_cta(doc):
@@ -278,13 +288,15 @@ def page_cta(doc):
         "Diagnóstico de procesos.\n"
         "Mapa + primer bot o módulo en alcance cerrado.\n\n"
         "Juan Manuel López Correa — Ing. Agrónomo · Ph.D. AI\n"
-        "Pabla Torres — Ing. Industrial · Ingeniería de procesos",
-        "lat", 12, (0.82, 0.82, 0.82),
+        "Pabla Torres — Ing. Industrial · Ingeniería de procesos\n\n"
+        "linkedin.com/in/juanmanuelopezcorrea\n"
+        "orcid.org/0000-0002-3001-744X",
+        "lat", 11, (0.82, 0.82, 0.82),
     )
 
-    line(page, PHONE, 42, 510, "xb", 22, WHITE)
-    line(page, EMAIL, 42, 540, "lat", 12, (0.72, 0.72, 0.72))
-    line(page, WA, 42, 562, "lat", 12, (0.72, 0.72, 0.72))
+    line(page, PHONE, 42, 520, "xb", 22, WHITE)
+    line(page, EMAIL, 42, 548, "lat", 12, (0.72, 0.72, 0.72))
+    line(page, WA, 42, 570, "lat", 12, (0.72, 0.72, 0.72))
 
     # Small portrait bottom-right: bodega tablet
     contain_image(

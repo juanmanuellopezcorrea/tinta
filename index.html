@@ -197,6 +197,14 @@
       border: 1px solid var(--line);
       padding: 28px 24px;
     }
+    .person-photo {
+      width: 112px; height: 112px;
+      border-radius: 2px;
+      object-fit: cover;
+      object-position: center top;
+      margin-bottom: 16px;
+      background: var(--mist);
+    }
     .person .role {
       font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
       color: var(--malbec); font-weight: 700; margin-bottom: 8px;
@@ -208,6 +216,18 @@
     .person ul { margin-left: 1.1rem; color: var(--ink); }
     .person li { margin: 7px 0; line-height: 1.4; }
     .person p { color: var(--muted); margin-top: 12px; line-height: 1.45; }
+    .person-links {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin-top: 16px;
+    }
+    .person-links a {
+      font-size: 12px; font-weight: 700; letter-spacing: .04em;
+      text-transform: uppercase; text-decoration: none;
+      color: var(--malbec);
+      border-bottom: 1px solid color-mix(in srgb, var(--malbec) 40%, transparent);
+      padding-bottom: 2px;
+    }
+    .person-links a:hover { color: var(--malbec-deep); }
 
     .steps {
       display: grid;
@@ -357,6 +377,7 @@
         <p class="lead">Campo + planta + inteligencia artificial. Dos perfiles que se complementan en el diagnóstico y en la entrega.</p>
         <div class="team">
           <article class="person">
+            <img class="person-photo" src="assets/juan-manuel-lopez.jpg?v=1" alt="Juan Manuel López Correa" width="112" height="112" />
             <div class="role">Fundador · negra. / tinta.</div>
             <h3>Juan Manuel López Correa</h3>
             <ul>
@@ -365,6 +386,11 @@
               <li>Software a medida, datos y automatización</li>
             </ul>
             <p>Une criterio de campo y planta con sistemas inteligentes: modela el problema, diseña la solución y la pone a producir.</p>
+            <div class="person-links">
+              <a href="https://www.linkedin.com/in/juanmanuelopezcorrea/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://orcid.org/0000-0002-3001-744X" target="_blank" rel="noopener noreferrer">ORCID</a>
+              <a href="https://scholar.google.es/citations?user=5U0qYAMAAAAJ&hl=es" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+            </div>
           </article>
           <article class="person">
             <div class="role">Ingeniería de procesos</div>
@@ -450,7 +476,9 @@
       <span>tinta. — by negra.</span>
       <span>
         <a href="mailto:jmlopezcorrea08@gmail.com">jmlopezcorrea08@gmail.com</a>
-        · Ing. Agrónomo · Ph.D. AI · Ing. Industrial (procesos)
+        · <a href="https://www.linkedin.com/in/juanmanuelopezcorrea/" target="_blank" rel="noopener">LinkedIn</a>
+        · <a href="https://orcid.org/0000-0002-3001-744X" target="_blank" rel="noopener">ORCID</a>
+        · <a href="https://scholar.google.es/citations?user=5U0qYAMAAAAJ&hl=es" target="_blank" rel="noopener">Scholar</a>
       </span>
     </div>
   </footer>
