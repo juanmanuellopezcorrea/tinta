@@ -232,18 +232,22 @@ def page_equipo(doc):
 
     # Pabla card
     page.draw_rect(fitz.Rect(A4.width / 2 + 10, 155, A4.width - 42, 455), color=MIST, fill=MIST, width=0)
-    line(page, "INGENIERÍA DE PROCESOS", A4.width / 2 + 26, 188, "sb", 8, MALBEC)
-    line(page, "PABLA TORRES", A4.width / 2 + 26, 220, "xb", 18, BLACK)
+    line(page, "PROCESOS · EQUIPOS · IA", A4.width / 2 + 26, 188, "sb", 8, MALBEC)
+    line(page, "PABLA ANABELA", A4.width / 2 + 26, 218, "xb", 16, BLACK)
+    line(page, "TORRES", A4.width / 2 + 26, 238, "xb", 16, BLACK)
     txt(
         page,
-        fitz.Rect(A4.width / 2 + 26, 250, A4.width - 56, 440),
-        "Ingeniera Industrial\n"
-        "Ingeniería de procesos\n\n"
-        "Mapa operativo, mejora continua y SLAs.\n"
-        "Ordena el as-is, define el to-be y deja el\n"
-        "proceso listo para automatizar — sin perder\n"
-        "el control de quien opera.",
-        "lat", 11, INK,
+        fitz.Rect(A4.width / 2 + 26, 258, A4.width - 56, 448),
+        "Ingeniera Química (UTN–FRMza, honores)\n"
+        "Coach Ontológico Profesional\n"
+        "Consultora en procesos, equipos e IA\n\n"
+        "Optimización y rediseño de procesos.\n"
+        "Capacitación, tecnología e IA aplicada.\n"
+        "Mejora continua y sostenibilidad.\n\n"
+        "Mendoza, Argentina\n"
+        "proyectos.patorres@gmail.com\n"
+        "+54 9 2615 464461",
+        "lat", 10, INK,
     )
 
     # Bottom how we work
@@ -288,7 +292,7 @@ def page_cta(doc):
         "Diagnóstico de procesos.\n"
         "Mapa + primer bot o módulo en alcance cerrado.\n\n"
         "Juan Manuel López Correa — Ing. Agrónomo · Ph.D. AI\n"
-        "Pabla Torres — Ing. Industrial · Ingeniería de procesos\n\n"
+        "Pabla Anabela Torres — Ing. Química · Coach · Procesos e IA\n\n"
         "linkedin.com/in/juanmanuelopezcorrea\n"
         "orcid.org/0000-0002-3001-744X",
         "lat", 11, (0.82, 0.82, 0.82),
