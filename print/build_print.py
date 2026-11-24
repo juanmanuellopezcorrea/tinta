@@ -190,6 +190,33 @@ def page_oferta(doc):
     )
 
 
+def page_producto(doc):
+    page = doc.new_page(width=A4.width, height=A4.height)
+    register(page)
+    page.draw_rect(page.rect, color=PAPER, fill=PAPER, width=0)
+    brand_lockup(page, 42, 28)
+    line(page, "LA APP DE ADMIN", 42, 100, "xb", 28, BLACK)
+    txt(
+        page,
+        fitz.Rect(42, 112, A4.width - 42, 148),
+        "Panel de operación: procesos, tareas y bots. Lo que el equipo ve y ejecuta.",
+        "lat", 11, MUTED,
+    )
+
+    # Main dashboard
+    main = fitz.Rect(42, 160, A4.width - 42, 400)
+    cover_image(page, ASSETS / "app-admin-dashboard.jpg", main)
+    line(page, "DASHBOARD DE OPERACIÓN", 42, 420, "sb", 9, MALBEC)
+
+    # Two smaller shots
+    left = fitz.Rect(42, 440, A4.width / 2 - 12, A4.height - 48)
+    right = fitz.Rect(A4.width / 2 + 12, 440, A4.width - 42, A4.height - 48)
+    cover_image(page, ASSETS / "app-admin-procesos.jpg", fitz.Rect(left.x0, left.y0, left.x1, left.y1 - 28))
+    cover_image(page, ASSETS / "app-admin-bots.jpg", fitz.Rect(right.x0, right.y0, right.x1, right.y1 - 28))
+    line(page, "PROCESOS  ·  AS-IS / TO-BE", left.x0, left.y1 - 8, "sb", 8, MUTED)
+    line(page, "BOTS DE TAREAS", right.x0, right.y1 - 8, "sb", 8, MUTED)
+
+
 def page_equipo(doc):
     page = doc.new_page(width=A4.width, height=A4.height)
     register(page)
@@ -315,6 +342,7 @@ def build():
     doc = fitz.open()
     page_cover(doc)
     page_oferta(doc)
+    page_producto(doc)
     page_equipo(doc)
     page_cta(doc)
     out = PRINT / "tinta-dossier-venta.pdf"

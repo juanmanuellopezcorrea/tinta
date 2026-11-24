@@ -273,6 +273,54 @@
     }
     .kit span { color: rgba(255,255,255,.75); font-size: 14px; line-height: 1.4; }
 
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    .product-shot {
+      background: #fff;
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+    .product-shot img {
+      width: 100%;
+      height: auto;
+      display: block;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      object-position: top center;
+      background: #111;
+    }
+    .product-shot figcaption {
+      padding: 14px 16px 16px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    .product-shot figcaption strong {
+      display: block;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 22px;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    @media (min-width: 900px) {
+      .product-grid {
+        grid-template-columns: 1.2fr 0.8fr;
+        grid-template-rows: auto auto;
+      }
+      .product-shot.hero-shot {
+        grid-row: 1 / span 2;
+      }
+      .product-shot.hero-shot img {
+        height: 100%;
+        min-height: 420px;
+        object-fit: cover;
+      }
+    }
+
     .cta-band { background: var(--black); color: #fff; padding: 64px 0; }
     .cta-band .display { font-size: clamp(36px, 7vw, 64px); max-width: 16ch; margin-bottom: 12px; }
     .cta-band p { color: rgba(255,255,255,.75); max-width: 44ch; margin-bottom: 20px; }
@@ -352,6 +400,37 @@
             <h3>04 Bots de tareas</h3>
             <p>Agentes que ejecutan: leer, cargar, disparar, conciliar, sincronizar. Trabajo repetible, fuera de la cabeza del equipo.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="producto">
+      <div class="wrap">
+        <div class="kicker">Producto</div>
+        <h2 class="display">La app de admin</h2>
+        <p class="lead">Panel de operación: procesos, tareas y bots. Lo que el equipo ve y ejecuta — no un PowerPoint.</p>
+        <div class="product-grid">
+          <figure class="product-shot hero-shot">
+            <img src="assets/app-admin-dashboard.jpg?v=1" alt="Dashboard admin tinta. — operación de bodega" />
+            <figcaption>
+              <strong>Dashboard de operación</strong>
+              KPIs, mapa de proceso y tareas abiertas en un solo panel.
+            </figcaption>
+          </figure>
+          <figure class="product-shot">
+            <img src="assets/app-admin-procesos.jpg?v=1" alt="Editor de procesos as-is / to-be" />
+            <figcaption>
+              <strong>Ingeniería de procesos</strong>
+              As-is / to-be, swimlanes, SLAs y dueños por área.
+            </figcaption>
+          </figure>
+          <figure class="product-shot">
+            <img src="assets/app-admin-bots.jpg?v=1" alt="Bots de automatización de tareas" />
+            <figcaption>
+              <strong>Bots de tareas</strong>
+              Jobs automatizados, historial de ejecución y control on/off.
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
